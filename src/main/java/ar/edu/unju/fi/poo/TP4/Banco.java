@@ -5,11 +5,11 @@ import java.util.Collections;
 import java.util.List;
 import java.util.TreeMap;
 
-public class Banco2 {
+public class Banco {
 	private TreeMap<String, CuentaBancaria> cuentas;
 	private List<CuentaBancaria> listadecuentas;
 
-	public Banco2() {
+	public Banco() {
 
 		cuentas = new TreeMap<String, CuentaBancaria>();
 
@@ -117,6 +117,10 @@ public class Banco2 {
 		return cuentaMaximoSaldo;
 	}
  
+	
+	
+	
+	
 	public TreeMap<String, CuentaBancaria> getCuentas() {
 		return cuentas;
 	}
