@@ -98,7 +98,25 @@ public class Banco2 {
 		return null;
 
 	}
+	
+	public CuentaBancaria buscarMayorSalario(){
+		
+		CuentaBancaria cuentaMaximoSaldo = new CuentaBancaria();
+		double max = 0;
+		for ( int i = 0 ; i < listadecuentas.size(); i++ ) {
 
+			if(i==0) {
+				max = listadecuentas.get(i).getSaldo();
+				cuentaMaximoSaldo = listadecuentas.get(i);
+			}else if(max < listadecuentas.get(i).getSaldo()) {
+				max = listadecuentas.get(i).getSaldo();
+				cuentaMaximoSaldo = listadecuentas.get(i);
+			}
+
+		}
+		return null;
+	}
+ 
 	public TreeMap<String, CuentaBancaria> getCuentas() {
 		return cuentas;
 	}
