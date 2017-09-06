@@ -114,7 +114,7 @@ public class Banco2 {
 			}
 
 		}
-		return null;
+		return cuentaMaximoSaldo;
 	}
  
 	public TreeMap<String, CuentaBancaria> getCuentas() {
