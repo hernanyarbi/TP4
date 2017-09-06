@@ -1,9 +1,7 @@
 package ar.edu.unju.fi.poo.TP4;
 
-
-
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.TreeMap;
 
@@ -38,7 +36,10 @@ public class Banco2 {
 		    case 3:System.out.println("Nro de cuenta repetida");
 		    		break;
 		   }
-		
+
+		listadecuentas.add(cuenta);
+
+		Collections.sort(listadecuentas);
 	
 	}
 	
