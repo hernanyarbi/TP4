@@ -8,7 +8,8 @@ import java.util.TreeMap;
 public class Banco {
 	private TreeMap<String, CuentaBancaria> cuentas;
 	private List<CuentaBancaria> listadecuentas;
-
+	
+	
 	public Banco() {
 
 		cuentas = new TreeMap<String, CuentaBancaria>();
@@ -17,6 +18,10 @@ public class Banco {
 
 	}
 
+	
+	
+	
+	
 	public void agregarCuenta(CuentaBancaria cuenta) {
 
 		switch (validar(cuenta)) {
@@ -39,16 +44,21 @@ public class Banco {
 
 	}
 
-	public void agregarArray() {
+	
 
-	}
-
+	
+	
+	
 	public void mostrar() {
 		for (CuentaBancaria c : cuentas.values()) {
 			System.out.println(c.getNrocuenta());
 		}
 	}
 
+	
+	
+	
+	
 	public int validar(CuentaBancaria cuenta) {
 
 		int i = 0;
@@ -67,6 +77,10 @@ public class Banco {
 
 	}
 
+	
+	
+	
+	
 	/*
 	 * Busqueda por clave de la cuenta 
 	 */
@@ -82,6 +96,12 @@ public class Banco {
 
 	}
 
+	
+	
+	
+	
+	
+	
 	/*
 	 * Busqueda por dni de la cuenta
 	 */
@@ -98,6 +118,14 @@ public class Banco {
 		return null;
 
 	}
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	public CuentaBancaria buscarMayorSalario(){
 		
