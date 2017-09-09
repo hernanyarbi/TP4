@@ -1,16 +1,14 @@
 package ar.edu.unju.fi.poo.TP4;
 
-import org.junit.*;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 import junit.framework.TestCase;
-
-/**
- * 
- * @author Hernan Yarbi
- *
- */
 
 @RunWith(JUnit4.class)
 public class BancoTest extends TestCase {
@@ -20,7 +18,6 @@ public class BancoTest extends TestCase {
 	@Before
 	public void init(){
 		banco = new Banco();
-		banco.agregarCuenta( new CuentaBancaria("B-001","Simon Dice", 3677963 ,null,"Smd@",2000));
 	}
 	
 	@After
@@ -40,6 +37,8 @@ public class BancoTest extends TestCase {
 	
 	}
 	
+	
+	
 	@Test
 	public void testAgregarCuenta(){
 		
@@ -48,32 +47,6 @@ public class BancoTest extends TestCase {
 		
 		assertTrue(banco.getCuentas().size()==1);
 		
-	}
-	
-	@Test
-	public void validar() {
-		
-		assertEquals(banco.validar(new CuentaBancaria("B-001","Simon Dice",3675683,null,null,2000)), 3);
-		assertEquals(banco.validar(new CuentaBancaria("A-001","Simon Dice",3677963,null,null,2000)), 1);
-		assertEquals(banco.validar(new CuentaBancaria("A-001","Simon Dice",3675683,null,"Smd@",2000)), 2);
-		
-	}
-	
-	@Test
-	public void buscarCuenta() {
-		
-		//busqueda por clave
-		assertEquals(banco.buscarCuenta("B-001"), "Simon Dice 3677963 Smd@");
-		assertEquals(banco.buscarCuenta("B-002"), "no existe cuenta");
-		//busqueda por dni
-		assertEquals(banco.buscarCuenta(3677963), "Simon Dice 3677963 Smd@");
-		assertNull(banco.buscarCuenta(3677777));
-		
-	}
-	
-	@Test
-	public void buscarMayorSalario() {
-		assertNotNull(banco.buscarMayorSalario());
 	}
 
 }
