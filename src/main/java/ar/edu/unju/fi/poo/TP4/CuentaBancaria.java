@@ -2,6 +2,12 @@ package ar.edu.unju.fi.poo.TP4;
 
 import java.util.Date;
 
+/**
+ * 
+ * @author AndreaBelen
+ *
+ */
+
 public class CuentaBancaria implements Comparable<CuentaBancaria> {
 	private String nrocuenta;
 	private String cliente;
