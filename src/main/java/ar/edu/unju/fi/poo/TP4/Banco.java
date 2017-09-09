@@ -86,7 +86,7 @@ public class Banco {
 
 		if (cuentas.containsKey(clave) == true) {
 			CuentaBancaria c = getCuentas().get(clave);
-			return (c.getCliente() + " " + c.getDni() + " " + c.geteMail());
+			return c.info();
 		} else {
 			return "no existe cuenta";
 		}
@@ -102,7 +102,7 @@ public class Banco {
 		for (CuentaBancaria cuentaBancaria : listadecuentas) {
 
 			if (cuentaBancaria.getDni() == dni) {
-				return (cuentaBancaria.getCliente() + " " + cuentaBancaria.getDni() + " " + cuentaBancaria.geteMail());
+				return cuentaBancaria.info();
 			}
 
 		}
