@@ -1,15 +1,22 @@
 package ar.edu.unju.fi.poo.TP4;
 
 import java.util.ArrayList;
+
 import java.util.Collections;
 import java.util.List;
 import java.util.TreeMap;
 
+/**
+ * Esta clase permite agregar ,validar y buscar cuentas bancarias.
+ * 
+ * @author joel
+ *
+ */
+
 public class Banco {
 	private TreeMap<String, CuentaBancaria> cuentas;
 	private List<CuentaBancaria> listadecuentas;
-	
-	
+
 	public Banco() {
 
 		cuentas = new TreeMap<String, CuentaBancaria>();
@@ -18,47 +25,41 @@ public class Banco {
 
 	}
 
-	
-	
-	
-	
-	public void agregarCuenta(CuentaBancaria cuenta) {
+	/*
+	 * Agregar cuentas bancarias
+	 */
+
+	public String agregarCuenta(CuentaBancaria cuenta) {
 
 		switch (validar(cuenta)) {
 		case 0:
 			cuentas.put(cuenta.getNrocuenta(), cuenta);
-			System.out.println("Agregado correctamente");
 			listadecuentas.add(cuenta);
 			Collections.sort(listadecuentas);
-			break;
+			return "Agregado correctamente";
+
 		case 1:
-			System.out.println("DNI repetido");
-			break;
+
+			return "DNI repetido";
+
 		case 2:
-			System.out.println("Email repetido");
-			break;
+
+			return "Email repetido";
+
 		case 3:
-			System.out.println("Nro de cuenta repetida");
-			break;
+
+			return "Nro de cuenta repetida";
+
+		default:
+			return null;
 		}
 
 	}
 
-	
+	/*
+	 * varificar que no se repitan las cuentas bancarias.
+	 */
 
-	
-	
-	
-	public void mostrar() {
-		for (CuentaBancaria c : cuentas.values()) {
-			System.out.println(c.getNrocuenta());
-		}
-	}
-
-	
-	
-	
-	
 	public int validar(CuentaBancaria cuenta) {
 
 		int i = 0;
@@ -77,14 +78,10 @@ public class Banco {
 
 	}
 
-	
-	
-	
-	
 	/*
-	 * Busqueda por clave de la cuenta 
+	 * Busqueda por clave de la cuenta.
 	 */
-	
+
 	public String buscarCuenta(String clave) {
 
 		if (cuentas.containsKey(clave) == true) {
@@ -96,16 +93,10 @@ public class Banco {
 
 	}
 
-	
-	
-	
-	
-	
-	
 	/*
 	 * Busqueda por dni de la cuenta
 	 */
-	
+
 	public String buscarCuenta(int dni) {
 
 		for (CuentaBancaria cuentaBancaria : listadecuentas) {
@@ -118,25 +109,21 @@ public class Banco {
 		return null;
 
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	public CuentaBancaria buscarMayorSalario(){
-		
+
+	/*
+	 * mostrar datos del cliente con el maximo valor de saldo.
+	 */
+
+	public CuentaBancaria buscarMayorSalario() {
+
 		CuentaBancaria cuentaMaximoSaldo = new CuentaBancaria();
 		double max = 0;
-		for ( int i = 0 ; i < listadecuentas.size(); i++ ) {
+		for (int i = 0; i < listadecuentas.size(); i++) {
 
-			if(i==0) {
+			if (i == 0) {
 				max = listadecuentas.get(i).getSaldo();
 				cuentaMaximoSaldo = listadecuentas.get(i);
-			}else if(max < listadecuentas.get(i).getSaldo()) {
+			} else if (max < listadecuentas.get(i).getSaldo()) {
 				max = listadecuentas.get(i).getSaldo();
 				cuentaMaximoSaldo = listadecuentas.get(i);
 			}
@@ -144,11 +131,7 @@ public class Banco {
 		}
 		return cuentaMaximoSaldo;
 	}
- 
-	
-	
-	
-	
+
 	public TreeMap<String, CuentaBancaria> getCuentas() {
 		return cuentas;
 	}
