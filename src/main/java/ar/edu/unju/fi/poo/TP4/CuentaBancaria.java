@@ -4,6 +4,12 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
+/**
+ * 
+ * @author AndreaBelen
+ *
+ */
+
 public class CuentaBancaria implements Comparable<CuentaBancaria> {
 	private String nrocuenta;
 	private String cliente;
