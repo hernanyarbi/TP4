@@ -1,6 +1,8 @@
 package ar.edu.unju.fi.poo.TP4;
 
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 public class CuentaBancaria implements Comparable<CuentaBancaria> {
 	private String nrocuenta;
@@ -82,6 +84,26 @@ public class CuentaBancaria implements Comparable<CuentaBancaria> {
 		else if (dni > cuenta.dni)
 			return 1;
 		return 0;
+	}
+	
+	/*
+	 * metodo encargado de mostrar la infirmacion de la cuetnta
+	 */
+	
+	public String info(){
+		String datos = new String();
+		int anios = antiguedad();
+		datos = "Cuenta n°: " + this.nrocuenta + " - " + "Cliente: " + this.cliente + " - " + "Antiguedad: " + anios + " Años" + " - " + "Saldo: " + this.saldo ;
+		return datos;
+	}
+	
+	/*
+	 * calculo de la antigüedad
+	 */
+	
+	public int antiguedad(){
+		Calendar fechahoy = new GregorianCalendar();
+		return fechahoy.get(Calendar.YEAR) - (fecha.getYear() + 1900);
 	}
 
 }
